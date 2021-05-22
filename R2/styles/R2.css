@@ -1,0 +1,84 @@
+/* RESETEO / BASES*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 16px;
+}
+
+body{
+    background-color: #fefefe;
+    color: #666;
+    --BgTable1: #F8F8F8;
+    --BgTable2: #FFFFFF;
+    --borderCellColor: #999;
+    --hoverCellBg: #ebe8e8;
+
+}
+
+/* TABLA */
+
+table{
+    background-color: var(--BgTable2);
+    border-collapse: collapse;
+}
+
+
+.row:nth-child(2n){
+    background-color: var(--BgTable1)
+}
+
+.row td,.row th{
+    border: 1px solid var(--borderCellColor);
+    position: relative;
+    text-indent: 15px;
+    transition: 0.5s;
+}
+
+.row td:hover,.row th:hover{
+    background-color: var(--hoverCellBg);
+}
+
+.row th img{
+    width: 1rem;
+    position: absolute;
+    top: 30%;
+    right: 7%;
+    cursor: pointer;
+}
+
+.row th p{
+    position: absolute;
+    top: 30%;
+}
+
+/* Mobile Screen */
+@media only screen and (max-width: 600px) {
+    body{
+        width: fit-content;
+    }
+    table{
+        min-width: 800px;
+        min-height: 100vh;
+    }
+    .row td,.row th{
+        min-width: 220px;
+    }
+}
+
+/* Desktop Screen */
+@media only screen and (min-width: 600px) {
+    body{
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+    table{
+        width: 100%;
+        height: 100%;
+    }
+}
